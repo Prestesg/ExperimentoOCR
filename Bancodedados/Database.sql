@@ -1,0 +1,3 @@
+CREATE DATABASE BaseOLTPExperimentoOCR;
+CREATE DATABASE BaseOLAPExperimentoOCR;
+USE BaseOLTPExperimentoOCR;
