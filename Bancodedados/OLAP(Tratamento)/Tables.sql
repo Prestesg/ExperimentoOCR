@@ -1,0 +1,26 @@
+CREATE TABLE Imagens (
+    ID INT PRIMARY KEY NOT NULL,
+    Link VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Imagens_Texto (
+    ID INT PRIMARY KEY NOT NULL,
+    Texto VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Emocoes (
+    ID INT PRIMARY KEY NOT NULL,
+    Nome VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Tratamentos_Textos (
+    ID INT PRIMARY KEY NOT NULL,
+    IDImagem INT NOT NULL,
+    IDTexto_imagem INT NOT NULL,
+    IDEmocao INT NOT NULL,
+    Parte_texto INT NOT NULL,
+    Texto_Tratado INT NOT NULL,
+    FOREIGN KEY (IDImagem) REFERENCES Imagens(ID),
+    FOREIGN KEY (IDEmocao) REFERENCES Emocoes(ID),
+    FOREIGN KEY (IDTexto_imagem) REFERENCES Imagens_Texto(ID)
+);
