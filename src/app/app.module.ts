@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,13 @@ import {MatButtonModule, MatCheckboxModule, MatGridListModule, MatCardModule, Ma
 import {MatMenuModule} from '@angular/material/menu';
 import { HomeComponent } from './home/home.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import swal from 'sweetalert2'; 
+import Tesseract from 'tesseract.js';
+
+const routes: Routes = [
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component:HomeComponent }
+];
 
 @NgModule({
   declarations: [
@@ -41,9 +48,15 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatGridListModule,
     MatCardModule,
     MatIconModule,
-    LayoutModule
+    LayoutModule,
+    RouterModule.forRoot(routes)
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}
+
+
