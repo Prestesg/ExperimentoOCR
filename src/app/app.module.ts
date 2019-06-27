@@ -16,9 +16,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatGridListModule, MatCardModule, MatIconModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import { HomeComponent } from './home/home.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSliderModule} from '@angular/material/slider';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
 import { LayoutModule } from '@angular/cdk/layout';
 import swal from 'sweetalert2'; 
 import Tesseract from 'tesseract.js';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -35,7 +41,8 @@ const routes: Routes = [
     ImageCardComponent,
     ListCardComponent,
     EvaluationPostComponent,
-    HomeComponent
+    HomeComponent,
+    LoginFormComponent   
   ],
   imports: [
     BrowserModule,
@@ -49,9 +56,15 @@ const routes: Routes = [
     MatCardModule,
     MatIconModule,
     LayoutModule,
-    RouterModule.forRoot(routes)
+    RouterModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDialogModule,
+    MatDialog,
+    MatDialogRef
   ],
-  exports: [RouterModule],
+  exports: [RouterModule,EvaluationPostComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
