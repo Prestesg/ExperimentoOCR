@@ -1,12 +1,10 @@
 import { Component, OnInit, Inject} from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule, MatCheckboxModule, MatGridListModule, MatCardModule, MatIconModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDialogModule} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login-form',
@@ -15,12 +13,12 @@ import {MatDialogModule} from '@angular/material/dialog';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<LoginFormComponent>) { }
+  constructor() { }
 
   ngOnInit() {
   }
   
-  onNoClick(): void {
-    this.dialogRef.close();
+  login(): void {
+    
   }
 }

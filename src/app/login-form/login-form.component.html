@@ -1,11 +1,30 @@
-<h1 mat-dialog-title>Hi </h1>
-<div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <input matInput >
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()" >No Thanks</button>
-  <button mat-button  cdkFocusInitial>Ok</button>
+<!-- Modal -->
+<div class="modal fade" id="addProbModal" tabindex="-1" role="dialog" aria-labelledby="addProbModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content" (ngSubmit)="onSubmit()">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
+        <!-- Add #closeBtn -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" #closeBtn>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Modal body -->
+        <form #formRef="ngForm">
+          <div class="form-group">
+            <label for="iptUser">Usuario:</label>
+            <input name="iptUser" id="iptUser" required type="text" class="form-control">
+          </div>
+          <div class="form-group">
+              <label for="iptPass">Senha:</label>
+              <input name="iptPass" id="iptPass" required type="password" class="form-control">
+          </div>
+        </form>
+        <a class="remember text-center" href="#">Esqueceu o login ou a senha?</a>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!formRef.form.valid" (click)="login()">Acessar</button>
+      <a class="text-center" href="#">Cadastre-se</a>
+    </div>
+  </div>
 </div>

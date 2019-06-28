@@ -19,8 +19,6 @@ import { HomeComponent } from './home/home.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSliderModule} from '@angular/material/slider';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {MatDialogModule} from '@angular/material/dialog';
 import { LayoutModule } from '@angular/cdk/layout';
 import swal from 'sweetalert2'; 
 import Tesseract from 'tesseract.js';
@@ -59,10 +57,7 @@ const routes: Routes = [
     RouterModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSelectModule,
-    MatDialogModule,
-    MatDialog,
-    MatDialogRef
+    MatSelectModule
   ],
   exports: [RouterModule,EvaluationPostComponent],
   providers: [],

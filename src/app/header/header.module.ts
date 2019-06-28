@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [LoginFormComponent],
@@ -15,7 +14,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
     MatFormFieldModule,
     FormsModule,
   ],
-  exports:[MatFormFieldModule,MatInputModule,MatDialog, MatDialogRef ],
+  exports:[MatFormFieldModule,MatInputModule],
   providers:[
    
   ]

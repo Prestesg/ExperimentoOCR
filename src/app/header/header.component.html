@@ -15,10 +15,10 @@
             <a mat-button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Sobre</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a mat-button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Github</a>
+            <a mat-button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="https://github.com/Prestesg/ExperimentoOCR">Github</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-              <a mat-button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact" (click)="openDialog()">Login</a>
+              <a mat-button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" #loginBtn (click)="loginForm()" data-toggle="modal" data-target="#addProbModal">Login</a>
             </li>
         </ul>
       </div>

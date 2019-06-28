@@ -11,24 +11,35 @@ import  Swal  from 'sweetalert2';
 })
 
 export class HomeComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 2, rows: 2 },
-          { title: 'Card 3', cols: 3, rows: 3 }
-        ];
-      }
 
-      return [
-        { title: 'Card 1', cols: 1, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 1 }
-      ];
+  loginForm(){
+
+    
+    Swal.mixin({
+      title: 'Selecione um arquivo',
+      input: 'file',
+      confirmButtonText: 'Next &rarr;',
+      showCancelButton: true,
+      progressSteps: ['1', '2', '3']
+    }).queue([
+      {
+        title: 'Selecione um arquivo'      
+      },
+      'Question 2',
+      'Question 3'
+    ]).then((result) => {
+      if (result.value) {
+        Swal.fire({
+          title: 'All done!',
+          html:
+            'Your answers: <pre><code>' +
+              JSON.stringify(result.value) +
+            '</code></pre>',
+          confirmButtonText: 'Lovely!'
+        })
+      }
     })
-  );
+  }
   
   async sendFile(){
     const {value: file} = await Swal.fire({
@@ -39,20 +50,19 @@ export class HomeComponent {
         'aria-label': 'Upload your profile picture'
       }
     })
-    
+
     if (file) {
       const reader = new FileReader
       reader.onload = (e) => {
-        /*Swal.fire({
+        Swal.fire({
           title: 'Your uploaded picture',
           imageUrl: e.target.result,
           imageAlt: 'The uploaded picture'
-        })*/
+        })
       }
-
       reader.readAsDataURL(file)
     }
   }
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor() {}
 }
 

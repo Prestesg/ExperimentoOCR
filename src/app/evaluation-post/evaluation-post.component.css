@@ -55,3 +55,117 @@
     max-height: 250px;
     overflow:hidden;
   }
+
+  .example-card {
+    max-width: 400px;
+  }
+
+  .example-card {
+    margin: 0;
+    overflow: hidden;
+    float: left;
+    position: relative;
+}
+
+.example-card a {
+    text-decoration: none;
+    float: left;
+}
+
+.example-card a:hover {
+    cursor: pointer;
+} 
+
+.card-image {
+    float: left;
+    border: none;
+} 
+
+.example-card img:hover .card-texto{
+  display: block;
+  font-size: 1.2em;
+  padding: 10px 0;
+  background: #111;
+  filter:alpha(opacity=75);
+  opacity:.75;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; /*--IE 8 Transparency--*/
+  color: #fff;
+  position: absolute;
+  bottom: 11px;
+  left: 11px;
+  padding: 10px;
+  margin: 0;
+  width: 615px;
+  border-top: 1px solid #999;
+}
+
+.example-card a img {
+  float: left;
+  margin: 0;
+  border: none;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.example-card a:hover .card-texto strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size:1.5em;
+}
+
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+/*Animação massa */ 
+.demo-2 {
+    position:relative;
+    width:100%;
+    height:200px;
+    overflow:hidden;
+    float:left;
+    background-color:rgba(26,76,110,0.5)
+}
+
+.demo-2 p.card-texto,.demo-2 h2 {
+    color:#fff;
+    padding:10px;
+    left:-20px;
+    top:20px;
+    position:relative
+}
+.demo-2 p.card-texto {
+    font-family:'Lato';
+    font-size:12px;
+    line-height:18px;
+    margin:0
+}
+.demo-2 h2 {
+    font-size:20px;
+    line-height:24px;
+    margin:0;
+    font-family:'Lato'
+}
+
+.effect img {
+    position:absolute;
+    left:0;
+    bottom:0;
+    cursor:pointer;
+    margin:0 0;
+    -webkit-transition:bottom .3s ease-in-out;
+    -moz-transition:bottom .3s ease-in-out;
+    -o-transition:bottom .3s ease-in-out;
+    transition:bottom .3s ease-in-out
+}
+
+.effect img.top:hover {
+    bottom:-300px;
+    padding-top:100px
+}
+
+h2.zero,p.card-texto {
+    padding:0
+}
