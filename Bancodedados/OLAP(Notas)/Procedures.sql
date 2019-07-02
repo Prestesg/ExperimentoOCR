@@ -1,17 +1,17 @@
 DELIMITER $$
-CREATE PROCEDURE PopulaDimencoes (IN qtd INT)
+CREATE PROCEDURE PopulaDimencoes ()
 BEGIN
-INSERT INTO baseolapexperimentoocrnotas.imagens (ID, Link) SELECT ID, Link FROM baseoltpexperimentoocr.Imagens;
-INSERT INTO baseolapexperimentoocrnotas.usuario (ID, Nome, Email) SELECT ID, Nome, Email FROM baseoltpexperimentoocr.Usuario;
-INSERT INTO baseolapexperimentoocrnotas.texto (ID, Texto) SELECT ID, Texto FROM baseoltpexperimentoocr.Imagens_Texto;
-INSERT INTO baseolapexperimentoocrnotas.emocoes (ID, Nome) SELECT ID, Nome FROM baseoltpexperimentoocr.Emocao;
+INSERT INTO baseolapexperimentoocrnotas.imagens (ID, Link) SELECT ID, Link FROM baseoltpexperimentoocr.imagens;
+INSERT INTO baseolapexperimentoocrnotas.usuario (ID, Nome, Email) SELECT ID, Nome, Email FROM baseoltpexperimentoocr.usuario;
+INSERT INTO baseolapexperimentoocrnotas.texto (ID, Texto) SELECT ID, Texto FROM baseoltpexperimentoocr.imagens_Texto;
+INSERT INTO baseolapexperimentoocrnotas.emocoes (ID, Nome) SELECT ID, Nome FROM baseoltpexperimentoocr.emocoes;
 END $$;
 DELIMITER ;
 
 DELIMITER $$
-CREATE PROCEDURE PopulaFato (IN qtd INT)
+CREATE PROCEDURE PopulaFato ()
 BEGIN
-INSERT INTO baseolapexperimentoocrnotas.Extracoes (IDUsuario, IDImagem,IDTexto_Imagem,IDEmocao,Nota_texto,Nota_emocao);
+INSERT INTO baseolapexperimentoocrnotas.Extracoes (IDUsuario, IDImagem,IDTexto_Imagem,IDEmocao,Nota_texto,Nota_emocao)
 SELECT 
 OLTPu.ID, 
 OLTPit.IDImagem,

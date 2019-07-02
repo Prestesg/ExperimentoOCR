@@ -41,7 +41,7 @@ CREATE TABLE Emocoes_Texto (
     ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     IDImagem_texto INT NOT NULL,
     IDEmocao INT NOT NULL,
-    FOREIGN KEY (IDImagem_taxto) REFERENCES Imagens_Texto(ID),
+    FOREIGN KEY (IDImagem_texto) REFERENCES Imagens_Texto(ID),
     FOREIGN KEY (IDEmocao) REFERENCES Emocoes(ID)
 );
 
@@ -52,4 +52,14 @@ CREATE TABLE Avaliacao_Emocao (
     Nota INT NOT NULL,
     FOREIGN KEY (IDTexto_emocao) REFERENCES Emocoes_Texto(ID),
     FOREIGN KEY (IDUsuario) REFERENCES Usuario(ID)
+);
+
+CREATE TABLE Edicao_classificacao(
+    ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    IDClassificacao_emocao INT NOT NULL,
+    IDClassificacao_texto INT NOT NULL ,
+    Texto_edit VARCHAR(255),
+    IDEmocao_edit INT,
+    FOREIGN KEY (IDClassificacao_emocao) REFERENCES Avaliacao_Emocao(ID),
+    FOREIGN KEY (IDClassificacao_texto) REFERENCES Avaliacao_Texto(ID)
 );

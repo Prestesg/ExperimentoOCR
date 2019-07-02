@@ -23,5 +23,6 @@ INNER JOIN emocoes_texto    as et ON et.IDImagem_texto = it.IDImagem
 INNER JOIN emocoes          as e  ON e.ID = et.IDEmocao
 INNER JOIN avaliacao_emocao as ae ON ae.IDTexto_emocao = et.ID
 INNER JOIN avaliacao_texto  as at ON at.IDImagem_texto = it.ID
+GROUP BY it.IDImagem
 ORDER BY at.Nota DESC
 LIMIT 10;
