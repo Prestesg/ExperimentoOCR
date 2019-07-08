@@ -1,7 +1,7 @@
 export class User {
 
     id  :  number;
-    name:  string;
+    nome:  string;
     email: string;
-    image: string;
+    imagem: string;
   }

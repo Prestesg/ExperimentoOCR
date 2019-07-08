@@ -12,9 +12,7 @@ import  Swal  from 'sweetalert2';
 
 export class HomeComponent {
 
-  loginForm(){
-
-    
+  loginForm(){    
     Swal.mixin({
       title: 'Selecione um arquivo',
       input: 'file',
@@ -56,7 +54,6 @@ export class HomeComponent {
       reader.onload = (e) => {
         Swal.fire({
           title: 'Your uploaded picture',
-          imageUrl: e.target.result,
           imageAlt: 'The uploaded picture'
         })
       }

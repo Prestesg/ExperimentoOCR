@@ -23,6 +23,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import swal from 'sweetalert2'; 
 import Tesseract from 'tesseract.js';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { ImagemService } from './services/imagem.service';
+import { HttpClientModule } from '@angular/common/http';
+import { UsuariosService } from './services/usuarios.service';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -57,10 +60,11 @@ const routes: Routes = [
     RouterModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   ],
   exports: [RouterModule,EvaluationPostComponent],
-  providers: [],
+  providers: [ImagemService,UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

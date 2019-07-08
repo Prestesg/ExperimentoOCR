@@ -1,20 +1,20 @@
 
-<section class="    " data-ride="carousel" id="postsCarousel">
+<section class="carousel slide" data-ride="carousel" id="postsCarousel">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 text-md-right lead">
-                <a class="btn btn-outline-secondary prev" href="" title="go back"><i class="fa fa-lg fa-chevron-left"></i></a>
-                <a class="btn btn-outline-secondary next" href="" title="more"><i class="fa fa-lg fa-chevron-right"></i></a>
+                <a class="btn btn-outline-secondary prev" title="go back"><i class="fa fa-lg fa-chevron-left"></i></a>
+                <a class="btn btn-outline-secondary next" title="more"><i class="fa fa-lg fa-chevron-right"></i></a>
             </div>
         </div>
     </div>
     
     <div class="container p-t-0 m-t-2 carousel-inner" >
-        <div class="row row-equal carousel-item  active m-t-0">
-                <mat-card *ngFor="let user of users"class="example-card" class="col-md-4 " >
+        <div class="row row-equal active m-t-0">
+                <mat-card *ngFor="let user of users" class="carousel-item " class="col-md-4 " >
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image"></div>
-                        <mat-card-title>{{user.name}}</mat-card-title>
+                        <mat-card-title>{{user.nome}}</mat-card-title>
                     </mat-card-header>
                     <div class="demo-2 effect">
                                <mat-card-content>
@@ -22,7 +22,7 @@
                                         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
                                         bred for hunting.</p>
                                 </mat-card-content>
-                            <img class="top" mat-card-image src="../assets/imagens/{{user.image}}" alt=""/>
+                            <img class="top" mat-card-image src="../assets/imagens/{{user.imagem}}" alt=""/>
                     </div>
                 </mat-card>
         </div>

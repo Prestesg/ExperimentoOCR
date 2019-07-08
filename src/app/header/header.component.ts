@@ -20,7 +20,6 @@ import {ViewChild, ElementRef} from '@angular/core';
 
 export class HeaderComponent implements OnInit {
   
-  @ViewChild('loginBtn') loginBtn: ElementRef;
 
   constructor() { }
 
